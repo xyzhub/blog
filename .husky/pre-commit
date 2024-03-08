@@ -3,5 +3,4 @@
 
 # npx eslint . --fix 
 
-# npx lint-staged
-pnpm precommit
+npx lint-staged
