@@ -2,7 +2,8 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "vue": "^3.4.19"
