@@ -1,31 +1,35 @@
 {
-  "type": "module",
-  "version": "0.0.0",
-  "scripts": {
-    "prepare": "husky install",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
-  },
-  "dependencies": {
-    "vue": "^3.4.19"
-  },
-  "devDependencies": {
-    "@mistjs/eslint-config": "^1.0.0",
-    "@types/node": "^20.11.25",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "eslint": "^8.57.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.1.4",
-    "vite-plugin-vitepress-demo": "^2.2.1",
-    "vitepress": "1.0.0-rc.45",
-    "vue-tsc": "^1.8.27"
-  },
-  "lint-staged": {
-    "./**/*.{js,ts,vue,tsx,jsx,css,less,json}": [
-      "eslint --fix"
-    ]
-  }
+	"type": "module",
+	"version": "0.0.0",
+	"scripts": {
+		"prepare": "husky install",
+		"docs:dev": "vitepress dev",
+		"docs:build": "vitepress build",
+		"docs:preview": "vitepress preview",
+		"gen:colors": "esno ./script/gen-colors.ts"
+	},
+	"dependencies": {
+		"vue": "^3.4.19"
+	},
+	"devDependencies": {
+		"@ant-design/colors": "^7.0.2",
+		"@mistjs/eslint-config": "^1.0.0",
+		"@types/node": "^20.11.25",
+		"@vitejs/plugin-vue": "^5.0.4",
+		"eslint": "^8.57.0",
+		"esno": "^4.7.0",
+		"husky": "^8.0.3",
+		"less": "^4.2.0",
+		"lint-staged": "^15.2.0",
+		"typescript": "^5.2.2",
+		"vite": "^5.1.4",
+		"vite-plugin-vitepress-demo": "^2.2.1",
+		"vitepress": "1.0.0-rc.45",
+		"vue-tsc": "^1.8.27"
+	},
+	"lint-staged": {
+		"./**/*.{js,ts,vue,tsx,jsx,css,less,json}": [
+			"eslint --fix"
+		]
+	}
 }

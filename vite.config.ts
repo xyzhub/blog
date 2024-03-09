@@ -17,7 +17,7 @@ export default defineConfig({
 		alias: [
 			{
 				find: /^@nui\/utils/,
-				replacement: path.resolve(baseUrl, '/packages/utils/src'), // ? 组装为绝对路径
+				replacement: path.resolve(baseUrl, 'packages/utils/src'), // ? 组装为绝对路径
 			},
 		],
 	},
