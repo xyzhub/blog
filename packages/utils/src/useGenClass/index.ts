@@ -44,6 +44,10 @@ export function useGenClass(componentName: string) {
     return `${clsname}-${arg}`
   }
 
+  const cm = (m: string): BEMTYPE => [m, 'M']
+
+  const ce = (e: string): BEMTYPE => [e, 'E']
+
   /**
    *
    * @param callback
@@ -56,5 +60,7 @@ export function useGenClass(componentName: string) {
   return {
     c,
     cx,
+    cm,
+    ce,
   }
 }

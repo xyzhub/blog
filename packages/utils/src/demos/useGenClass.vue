@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useGenClass } from '../useGenClass/index.ts'
 
-const { c, cx } = useGenClass('button')
+const { c, cx, ce } = useGenClass('button')
 
 const flag = ref(false)
 
@@ -17,7 +17,7 @@ function handle() {
 </script>
 
 <template>
-  {{ c('primary', ['mm', 'B'], ['e', 'E'], ['lg', 'M']) }}
+  {{ c('primary', ['mm', 'B'], ce('e'), ['lg', 'M']) }}
 
   <div :class="cls">
     {{ cls }}
