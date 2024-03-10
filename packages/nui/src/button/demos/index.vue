@@ -1,21 +1,29 @@
 <docs>
 ---
-title: Test Title
+title:  代码演示
 ---
-
-Hello World This is Test Docs block code in `docs.vue`.
 </docs>
 
 <script setup lang="ts">
-import { test } from '@nui/utils'
-
-test()
+function myClick() {
+  console.log(2222)
+}
 </script>
 
 <template>
   <div>
-    <n-button />
+    <n-button @click="myClick">
+      default
+    </n-button>
+
+    <n-button type="dashed">
+      dashed
+    </n-button>
+
+    <n-button type="primary">
+      primary
+    </n-button>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="less"></style>

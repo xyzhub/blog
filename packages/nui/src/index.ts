@@ -8,7 +8,6 @@ import * as components from './components'
 export * from './components'
 
 // ? 全局导出  => import nui from 'NUI'  app.use(nui)
-
 export default {
   install(app: App) {
     // ?批量注册所有组件  为了外界可以 直接使用 app.use(组件库)
@@ -18,7 +17,6 @@ export default {
         app.use(comp)
     })
   },
-
   // ? 绑定版本号
   version: pkg.version,
-} as Plugin // 指定类型表明为一个vue的plugin
+} as Plugin // ?指定类型表明为一个vue的plugin

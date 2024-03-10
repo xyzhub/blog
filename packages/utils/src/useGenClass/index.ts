@@ -25,7 +25,7 @@ export function useGenClass(componentName: string) {
    * @param arg
    * @returns BEMTYPE
    */
-  const c = (...arg: BEMTYPE[]): BEMTYPE => {
+  const c = (...arg: BEMTYPE[]): string => {
     if (arg.length) {
       return arg.reduce((pre, cur) => {
         if (Array.isArray(cur)) {
@@ -39,9 +39,9 @@ export function useGenClass(componentName: string) {
             return `${pre}--${cname}`
         }
         return `${pre}-${cur}`
-      }, clsname)
+      }, clsname) as string
     }
-    return `${clsname}-${arg}`
+    return clsname
   }
 
   const cm = (m: string): BEMTYPE => [m, 'M']

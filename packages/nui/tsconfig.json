@@ -3,8 +3,9 @@
   "extends": ["../../tsconfig.json"],
 
   // ? 需要重写的规则
-  "compilerOptions": {},
+  "compilerOptions": {
+  },
 
   // ? 包含的检验的文件
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts"]
 }

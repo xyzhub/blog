@@ -1,4 +1,95 @@
-.nui-btn {
 
-  color: pink;
+@import '../../style/index.less';
+
+.nui-button  {
+  --nui-button-font-weight: 400;
+  --nui-button-default-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+  --nui-button-primary-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+  --nui-button-danger-shadow: 0 2px 0 rgba(255, 38, 5, 0.06);
+  --nui-button-primary-color: #fff;
+  --nui-button-danger-color: #fff;
+  --nui-button-border-color-disabled: #d9d9d9;
+  --nui-button-default-ghost-color: #ffffff;
+  --nui-button-ghost-bg: transparent;
+  --nui-button-default-ghost-border-color: #ffffff;
+  --nui-button-padding-inline: 15px;
+  --nui-button-padding-inline-lg: 15px;
+  --nui-button-padding-inline-sm: 7px;
+  --nui-button-only-icon-size: 16px;
+  --nui-button-only-icon-size-sm: 14px;
+  --nui-button-only-icon-size-lg: 18px;
+  --nui-button-group-border-color: var(--nui-color-primary-6);
+  --nui-button-link-hover-bg: transparent;
+  --nui-button-text-hover-bg: rgba(0, 0, 0, 0.06);
+  --nui-button-default-color: rgba(0, 0, 0, 0.88);
+  --nui-button-default-bg: #ffffff;
+  --nui-button-default-border-color: #d9d9d9;
+  --nui-button-default-border-color-disabled: #d9d9d9;
+  --nui-button-default-hover-bg: #ffffff;
+  --nui-button-default-hover-color: var(--nui-color-primary-6);
+  --nui-button-default-hover-border-color: var(--nui-color-primary-6);
+  --nui-button-default-active-bg: #ffffff;
+  --nui-button-default-active-color: var(--nui-color-primary-7);
+  --nui-button-default-active-border-color: var(--nui-color-primary-7);
+  --nui-button-content-font-size: 14px;
+  --nui-button-content-font-size-sm: 14px;
+  --nui-button-content-font-size-lg: 16px;
+  --nui-button-content-line-height: 1.5714285714285714;
+  --nui-button-content-line-height-sm: 1.5714285714285714;
+  --nui-button-content-line-height-lg: 1.5;
+  --nui-button-padding-block: 4px;
+  --nui-button-padding-block-sm: 0px;
+  --nui-button-padding-block-lg: 7px;
+
+
+
+
+  cursor: pointer;
+  font-size: var(--nui-button-content-font-size);
+  line-height: var(--nui-button-content-line-height);
+  height: var(--nui-control-height);
+  padding: var(--nui-button-padding-block) var(--nui-button-padding-inline);
+  border-radius: var(--nui-border-radius);
+  transition: all 0.2s ease-in-out;
+
+
+
+  &--default {
+    color: var(--nui-button-default-color);
+    background-color: var(--nui-button-default-bg);
+    border: 1px solid var(--nui-button-default-border-color);
+    box-shadow: var(--nui-button-default-shadow);
+    &:hover {
+      color: var(--nui-button-default-hover-color);
+      background-color: var(--nui-button-default-hover-bg);
+      border-color: var(--nui-button-default-hover-border-color);
+    }
+  }
+
+
+  &--dashed {
+    color: var(--nui-button-default-color);
+    background-color: var(--nui-button-default-bg);
+    border: 1px dashed var(--nui-button-default-border-color);
+    box-shadow: var(--nui-button-default-shadow);
+    &:hover {
+      color: var(--nui-button-default-hover-color);
+      background-color: var(--nui-button-default-hover-bg);
+      border-color: var(--nui-button-default-hover-border-color);
+    }
+  }
+
+
+
+  &--primary {
+    color: var(--nui-button-primary-color);
+    background-color: var(--nui-color-primary);
+    box-shadow: var(--nui-button-primary-shadow);
+    border: 0;
+
+    &:hover {
+      background-color: var(--nui-color-primary-hover);
+    }
+  }
+
 }
