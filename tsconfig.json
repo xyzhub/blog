@@ -11,7 +11,9 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@nui/utils": ["packages/utils/src"] // 处理对应路径下的映射关系
+      "@nui/utils": ["packages/utils/src"], // 处理对应路径下的映射关系
+      "nui": ["packages/nui/src"],
+      "nui/*": ["packages/nui/src/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
@@ -25,6 +27,8 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.vitepress.json" }
+  ]
 }

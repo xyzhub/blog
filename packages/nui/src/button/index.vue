@@ -8,7 +8,7 @@ export default defineComponent({
 
 <template>
   <button>
-    1212121
+    我的组件
   </button>
 </template>
 

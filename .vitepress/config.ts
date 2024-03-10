@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '红猪的小站',
-  description: 'this is vue components ui library',
+  title: '红猪',
+  description: '欢迎来到我的小站',
 
   // ? 路由重写
   rewrites: {
