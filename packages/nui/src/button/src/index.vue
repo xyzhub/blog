@@ -2,7 +2,7 @@
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { useGenClass } from '@nui/utils'
-import type { ButtonType } from '../../types/button'
+import type { ButtonType } from '../../typings/button'
 
 export default defineComponent({
   name: 'NButton',

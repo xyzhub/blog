@@ -47,6 +47,11 @@ export default defineConfig({
     sidebar: {
       '/components/': [
         {
+          text: 'space',
+          link: '/components/space/',
+        },
+
+        {
           text: 'button',
           link: '/components/button/',
         },

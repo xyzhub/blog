@@ -11,7 +11,7 @@ function myClick() {
 </script>
 
 <template>
-  <div>
+  <n-space size="lg">
     <n-button @click="myClick">
       default
     </n-button>
@@ -23,7 +23,7 @@ function myClick() {
     <n-button type="primary">
       primary
     </n-button>
-  </div>
+  </n-space>
 </template>
 
 <style scoped lang="less"></style>
