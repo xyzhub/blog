@@ -119,7 +119,7 @@ export default defineConfig({
     // 大纲显示2-3级标题
     outline: {
       level: [2, 3],
-      label: '目录',
+      label: '页面导航',
     },
 
     // 社交链接
