@@ -2,7 +2,7 @@
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { useGenClass } from '@nui/utils'
-import type { ButtonType } from '../../typings/button'
+import type { ButtonSize, ButtonType } from '../../typings/button'
 
 export default defineComponent({
   name: 'NButton',
@@ -11,19 +11,33 @@ export default defineComponent({
       type: String as PropType<ButtonType>,
       default: 'default',
     },
+    size: {
+      type: String as PropType<ButtonSize>,
+      required: false,
+    },
   },
-  emits: ['clik'],
+  emits: ['click'],
   setup(props, { emit }) {
     const handleClick = (e: Event) => {
-      emit('clik', e)
+      emit('click', e)
     }
 
     const { c, cx, cm } = useGenClass('button')
 
-    const cls = cx(() => ({
-      [c()]: true,
-      [c(cm(props.type))]: true,
-    }))
+    const cls = cx(() => {
+      if (props.size) {
+        return {
+          [c()]: true,
+          [c(cm(props.type))]: true,
+          [c(cm(props.size))]: true,
+        }
+      }
+
+      return {
+        [c()]: true,
+        [c(cm(props.type))]: true,
+      }
+    })
 
     return {
       cls,
@@ -41,7 +55,3 @@ export default defineComponent({
     </span>
   </button>
 </template>
-
-<style scoped lang='less'>
-
-</style>

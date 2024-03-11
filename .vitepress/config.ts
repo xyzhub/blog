@@ -47,12 +47,12 @@ export default defineConfig({
     sidebar: {
       '/components/': [
         {
-          text: 'space',
+          text: 'space 间隔',
           link: '/components/space/',
         },
 
         {
-          text: 'button',
+          text: 'button 按钮',
           link: '/components/button/',
         },
       ],

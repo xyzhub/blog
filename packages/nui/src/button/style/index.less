@@ -1,7 +1,6 @@
-
 @import '../../style/index.less';
 
-.nui-button  {
+.nui-button {
   --nui-button-font-weight: 400;
   --nui-button-default-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
   --nui-button-primary-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
@@ -47,7 +46,6 @@
   cursor: pointer;
   font-size: var(--nui-button-content-font-size);
   line-height: var(--nui-button-content-line-height);
-  height: var(--nui-control-height);
   padding: var(--nui-button-padding-block) var(--nui-button-padding-inline);
   border-radius: var(--nui-border-radius);
   transition: all 0.2s ease-in-out;
@@ -59,6 +57,7 @@
     background-color: var(--nui-button-default-bg);
     border: 1px solid var(--nui-button-default-border-color);
     box-shadow: var(--nui-button-default-shadow);
+
     &:hover {
       color: var(--nui-button-default-hover-color);
       background-color: var(--nui-button-default-hover-bg);
@@ -72,6 +71,7 @@
     background-color: var(--nui-button-default-bg);
     border: 1px dashed var(--nui-button-default-border-color);
     box-shadow: var(--nui-button-default-shadow);
+
     &:hover {
       color: var(--nui-button-default-hover-color);
       background-color: var(--nui-button-default-hover-bg);
@@ -92,4 +92,55 @@
     }
   }
 
+
+
+  &--warning {
+    color: var(--nui-button-danger-color);
+    background-color: var(--nui-color-warning);
+    box-shadow: var(--nui-button-danger-shadow);
+    border: 0;
+
+    &:hover {
+      background-color: var(--nui-color-warning-hover);
+    }
+  }
+
+
+  &--error {
+    color: var(--nui-button-danger-color);
+    background-color: var(--nui-color-error);
+    box-shadow: var(--nui-button-danger-shadow);
+    border: 0;
+
+    &:hover {
+      background-color: var(--nui-color-error-hover);
+    }
+  }
+
+  &--success {
+    color: var(--nui-button-danger-color);
+    background-color: var(--nui-color-success);
+    box-shadow: var(--nui-button-danger-shadow);
+    border: 0;
+
+    &:hover {
+      background-color: var(--nui-color-success-hover);
+    }
+  }
+
+
+
+  /* size */
+
+  &--sm {
+    font-size: var(--nui-button-content-font-size-sm);
+    line-height: var(--nui-button-content-line-height-sm);
+    padding: var(--nui-button-padding-block-sm) var(--nui-button-padding-inline-sm);
+  }
+
+  &--lg {
+    font-size: var(--nui-button-content-font-size-lg);
+    line-height: var(--nui-button-content-line-height-lg);
+    padding: var(--nui-button-padding-block-lg) var(--nui-button-padding-inline-lg);
+  }
 }

@@ -1,9 +1,3 @@
-<docs>
----
-title:  代码演示
----
-</docs>
-
 <script setup lang="ts">
 function myClick() {
   console.log(2222)
@@ -23,7 +17,17 @@ function myClick() {
     <n-button type="primary">
       primary
     </n-button>
+
+    <n-button type="warning">
+      warning
+    </n-button>
+
+    <n-button type="error">
+      error
+    </n-button>
+
+    <n-button type="success">
+      error
+    </n-button>
   </n-space>
 </template>
-
-<style scoped lang="less"></style>
