@@ -1,5 +1,6 @@
-# space 组件
+# space 
 
-----
 
-<demo src='./demos/index.vue'></demo>
+## dir 排列方向
+<demo src="./demos/index.vue"></demo>
+
