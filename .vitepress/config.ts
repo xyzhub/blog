@@ -13,6 +13,8 @@ export default defineConfig({
   },
   // ? 主题配置
   themeConfig: {
+    lightModeSwitchTitle: '浅色模式',
+    darkModeSwitchTitle: '夜间模式',
     search: {
       provider: 'local',
     },
@@ -30,6 +32,7 @@ export default defineConfig({
 
           {
             text: '组件库',
+
             items: [
               { text: '组件', link: '/components/' },
               {
@@ -64,6 +67,11 @@ export default defineConfig({
       ],
     },
 
+    docFooter: {
+
+      prev: '上一页',
+      next: '下一页',
+    },
     // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },

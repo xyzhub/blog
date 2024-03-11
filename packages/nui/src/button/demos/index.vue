@@ -27,7 +27,7 @@ function myClick() {
     </n-button>
 
     <n-button type="success">
-      error
+      success
     </n-button>
   </n-space>
 </template>
