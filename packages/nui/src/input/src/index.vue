@@ -5,9 +5,12 @@
  */
 
 import { useGenClass } from '@nui/utils'
+
 import type { InputProps } from 'nui/typings/input'
 
 import { nextTick, onMounted, ref, useAttrs, useSlots } from 'vue'
+
+import { omit } from 'lodash'
 
 defineOptions({
   name: 'NInput', // ? 组件名称
@@ -36,6 +39,8 @@ const inputRef = ref<HTMLInputElement>()
 
 // ? 获取未在props上定义的属性
 const attrs = useAttrs()
+
+console.log('父组件传递的属性', attrs)
 
 // ? 对值进行处理
 function setInputValue() {
@@ -96,7 +101,7 @@ defineExpose({
 </script>
 
 <template>
-  <div :class="cls">
+  <div :class="cls" v-bind="omit(attrs, [''])">
     <span v-if="slot.prefix" :class="c(ce('prefix'))">
       <slot name="prefix" />
     </span>

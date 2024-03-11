@@ -1,5 +1,4 @@
 export interface InputProps {
-
   /** 响应值 */
   modelValue?: string
   /** 输入框类型 */
@@ -8,4 +7,9 @@ export interface InputProps {
   disabled?: boolean
   /** 输入框尺寸 */
   size?: 'sm' | 'lg'
+
+  /** input 原生属性 */
+  autocomplete?: string
+
+  placeholder?: string
 }

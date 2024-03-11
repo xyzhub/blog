@@ -17,3 +17,7 @@
 
 ## event 输入框事件
 <demo src='./demos/event.vue'></demo>
+
+
+## attr 输入框属性绑定
+<demo src='./demos/attr.vue'></demo>
