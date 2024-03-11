@@ -9,7 +9,10 @@ import type { InputProps } from 'nui/typings/input'
 
 import { nextTick, onMounted, ref, useAttrs, useSlots } from 'vue'
 
-defineOptions({ name: 'NInput' })
+defineOptions({
+  name: 'NInput', // ? 组件名称
+  inheritAttrs: false, // ? 是否继承父组件的属性
+})
 
 const props = withDefaults(defineProps<InputProps>(), {
   type: 'primary',
@@ -73,6 +76,22 @@ const cls = cx(() => {
     [c(cm('disabled'))]: !!props.disabled,
     [c(cm(props.size!))]: !!props.size,
   }
+})
+
+/* 处理失焦 聚焦函数抛出 */
+
+function focus() {
+  inputRef.value?.focus()
+}
+
+function blur() {
+  inputRef.value?.blur()
+}
+
+// ? 事件抛出
+defineExpose({
+  focus,
+  blur,
 })
 </script>
 

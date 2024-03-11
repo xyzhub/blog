@@ -13,3 +13,7 @@
 
 ## slot 输入框插槽
 <demo src='./demos/slot.vue'></demo>
+
+
+## event 输入框事件
+<demo src='./demos/event.vue'></demo>
