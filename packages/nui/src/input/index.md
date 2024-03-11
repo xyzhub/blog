@@ -7,6 +7,9 @@
 <demo src='./demos/status.vue'></demo>
 
 
-
 ## size 输入框尺寸
 <demo src='./demos/size.vue'></demo>
+
+
+## slot 输入框插槽
+<demo src='./demos/slot.vue'></demo>

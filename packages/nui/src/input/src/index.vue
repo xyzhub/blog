@@ -1,8 +1,13 @@
 <script setup lang='ts'>
+/**
+ * ? 受控组件 和 非受控组件 -->
+ * ! 非受控组件 当 v-model 绑定的组件 上删除v-model 组件任然可以输入数据 表示为非受控组件  -->
+ */
+
 import { useGenClass } from '@nui/utils'
 import type { InputProps } from 'nui/typings/input'
 
-import { nextTick, onMounted, ref, useAttrs } from 'vue'
+import { nextTick, onMounted, ref, useAttrs, useSlots } from 'vue'
 
 defineOptions({ name: 'NInput' })
 
@@ -14,6 +19,15 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emit = defineEmits<{
   'update:modelValue': [string]
 }>()
+
+// 定义插槽
+defineSlots<{
+  prefix(): any // ? 前缀插槽
+  suffix(): any // ? 后缀插槽
+}>()
+
+// 获取父组件传递的插槽内容 也可以使用 $slot 获取
+const slot = useSlots()
 
 const inputRef = ref<HTMLInputElement>()
 
@@ -51,7 +65,7 @@ onMounted(() => {
 })
 
 /* 样式设置 */
-const { c, cx, cm } = useGenClass('input')
+const { c, cx, cm, ce } = useGenClass('input')
 const cls = cx(() => {
   return {
     [c()]: true,
@@ -64,8 +78,9 @@ const cls = cx(() => {
 
 <template>
   <div :class="cls">
-    <!-- ? 受控组件 和 非受控组件 -->
-    <!-- ! 非受控组件 当 v-model 绑定的组件 上删除v-model 组件任然可以输入数据 表示为非受控组件  -->
+    <span v-if="slot.prefix" :class="c(ce('prefix'))">
+      <slot name="prefix" />
+    </span>
     <input
       ref="inputRef" type="text"
       :disabled="disabled"
@@ -73,5 +88,8 @@ const cls = cx(() => {
       :value="modelValue"
       @input="handleInput"
     >
+    <span v-if="slot.suffix" :class="c(ce('suffix'))">
+      <slot name="suffix" />
+    </span>
   </div>
 </template>
