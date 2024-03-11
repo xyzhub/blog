@@ -4,6 +4,9 @@ import type { Theme } from 'vitepress'
 import { AntdTheme } from 'vite-plugin-vitepress-demo/theme'
 import DefaultTheme from 'vitepress/theme'
 
+// 只需添加以下一行代码，引入时间线样式
+import 'vitepress-markdown-timeline/dist/theme/index.css'
+
 import './style.css'
 
 import nui from 'nui'
