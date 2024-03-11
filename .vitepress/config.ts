@@ -58,6 +58,11 @@ export default defineConfig({
           text: 'button 按钮',
           link: '/components/button/',
         },
+
+        {
+          text: 'input 输入框',
+          link: '/components/input/',
+        },
       ],
       '/utils/': [
         {
