@@ -88,7 +88,10 @@ export default defineConfig({
                 text: 'input 输入框',
                 link: '/components/input/',
               },
-
+              {
+                text: 'tooltip 提示信息',
+                link: '/components/tooltip/',
+              },
             ],
           },
           {
