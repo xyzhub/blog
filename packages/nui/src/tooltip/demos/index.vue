@@ -10,7 +10,7 @@ function changePosition() {
 
 <template>
   <n-space dir="vertical" size="lg">
-    <n-tooltip :placement="position" title="title">
+    <n-tooltip :placement="position" title="title" trigger="click">
       <!-- ? 这是注释 -->
       <n-button>文字</n-button>
       <template #content>

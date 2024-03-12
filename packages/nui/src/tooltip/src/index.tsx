@@ -15,6 +15,11 @@ export default defineComponent({
       type: String as PropType<Placement>,
       default: 'top',
     },
+
+    trigger: {
+      type: String as PropType<'hover' | 'click'>,
+      default: 'hover',
+    },
   },
   setup(props, { slots }) {
     // ? 处理tooltips样式
@@ -31,15 +36,65 @@ export default defineComponent({
       middleware: [offset(10)],
     })
 
+    /** 鼠标移入显示  鼠标移除隐藏 */
+    const show = ref<boolean>(false)
+
+    // ? 定义定时器
+    let timer: ReturnType<typeof setTimeout> | undefined
+
+    const mouseEnter = () => {
+      if (props.trigger === 'click')
+        return
+
+      show.value = true
+    }
+
+    const mouseLeave = () => {
+      timer = setTimeout(() => {
+        show.value = false
+      }, 500)
+    }
+
+    const handleClick = () => {
+      if (props.trigger === 'hover')
+        return
+      show.value = !show.value
+    }
+
+    const events = {
+      onMouseenter: mouseEnter,
+      onMouseleave: mouseLeave,
+      onClick: handleClick,
+    }
+
+    // 函数会重新渲染
     return () => {
-      console.log(slots)
       // ! tooltip 浮层依靠 reference 是否存在 来确定是否进行渲染显示
       // ? 若具名插槽 content存在 则优先渲染 插槽内容
       const renderTooltip = () => {
+        if (!show.value)
+          return
         if (!reference.value)
           return null
+
+        const mouseEnter = () => {
+          if (timer)
+            clearTimeout(timer)
+          timer = undefined
+          show.value = true
+        }
+
+        const mouseLeave = () => {
+          show.value = false
+        }
+
+        const events = {
+          onMouseenter: mouseEnter,
+          onMouseleave: mouseLeave,
+        }
+
         return (
-          <div ref={floating} style={floatingStyles.value} class={c()}>
+          <div ref={floating} style={floatingStyles.value} class={c()} {...events}>
             {slots.content?.() || props.title}
           </div>
         )
@@ -82,8 +137,9 @@ export default defineComponent({
       // ? 这里使用node创建节点是为了保证节点的类型与传入的类型一致
       const tipNode = createVNode(node as VNode, {
         ref: reference,
-
+        ...events,
       })
+
       return (
         <>
           {tipNode}
