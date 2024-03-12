@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@floating-ui/vue": "^1.0.6",
     "@types/lodash": "^4.14.202",
     "lodash": "^4.17.21"
   }
