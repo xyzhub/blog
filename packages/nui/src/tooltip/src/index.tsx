@@ -1,7 +1,8 @@
 import type { PropType, VNode, VNodeChild } from 'vue'
 import { computed, createVNode, defineComponent, ref } from 'vue'
 import type { Placement } from '@floating-ui/vue'
-import { useFloating } from '@floating-ui/vue'
+import { offset, useFloating } from '@floating-ui/vue'
+import { useGenClass } from '@nui/utils'
 
 export default defineComponent({
   name: 'NTooltip',
@@ -16,7 +17,8 @@ export default defineComponent({
     },
   },
   setup(props, { slots }) {
-    // const { c, cx, cm } = useGenClass('tooltip')
+    // ? 处理tooltips样式
+    const { c } = useGenClass('tooltip')
 
     const reference = ref(null)
     const floating = ref(null)
@@ -26,6 +28,7 @@ export default defineComponent({
 
     const { floatingStyles } = useFloating(reference, floating, {
       placement,
+      middleware: [offset(10)],
     })
 
     return () => {
@@ -36,7 +39,7 @@ export default defineComponent({
         if (!reference.value)
           return null
         return (
-          <div ref={floating} style={floatingStyles.value}>
+          <div ref={floating} style={floatingStyles.value} class={c()}>
             {slots.content?.() || props.title}
           </div>
         )
@@ -44,7 +47,6 @@ export default defineComponent({
 
       // ! 获取插槽内容 渲染子节点
       // ! 注意 当父组件内含有 注释时 vue 也会将其作为一个虚拟dom 传递给子组件
-
       function filterEmpty(children: VNodeChild[]): VNodeChild[] {
         return children?.filter((item: any) => item && !/^Symbol\(/.test(item.type.toString()))
       }
@@ -54,6 +56,7 @@ export default defineComponent({
         return typeof val === 'string' || typeof val === 'number' || typeof val === 'symbol' || val === null || val === undefined
       }
 
+      // ? 过滤空节点
       const children = filterEmpty(slots.default?.() as VNodeChild[])
 
       // ? 若无子节点 则不进行渲染
@@ -79,6 +82,7 @@ export default defineComponent({
       // ? 这里使用node创建节点是为了保证节点的类型与传入的类型一致
       const tipNode = createVNode(node as VNode, {
         ref: reference,
+
       })
       return (
         <>

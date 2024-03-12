@@ -12,9 +12,9 @@ function changePosition() {
   <n-space dir="vertical" size="lg">
     <n-tooltip :placement="position" title="title">
       <!-- ? 这是注释 -->
-      <div>文字</div>
+      <n-button>文字</n-button>
       <template #content>
-        <div style="color:red">
+        <div>
           插槽渲染自定义样式
         </div>
       </template>
