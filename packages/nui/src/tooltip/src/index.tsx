@@ -4,9 +4,7 @@ import type { Placement } from '@floating-ui/vue'
 import { useFloating } from '@floating-ui/vue'
 
 export default defineComponent({
-
   name: 'NTooltip',
-
   props: {
     title: {
       type: String as PropType<string>,
@@ -31,11 +29,17 @@ export default defineComponent({
     })
 
     return () => {
+      console.log(slots)
       // ! tooltip 浮层依靠 reference 是否存在 来确定是否进行渲染显示
+      // ? 若具名插槽 content存在 则优先渲染 插槽内容
       const renderTooltip = () => {
         if (!reference.value)
           return null
-        return <div ref={floating} style={floatingStyles.value}>{props.title}</div>
+        return (
+          <div ref={floating} style={floatingStyles.value}>
+            {slots.content?.() || props.title}
+          </div>
+        )
       }
 
       // ! 获取插槽内容 渲染子节点
