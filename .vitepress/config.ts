@@ -75,21 +75,21 @@ export default defineConfig({
             collapsed: false,
             items: [
               {
-                text: 'space 间隔',
+                text: 'Space 间隔',
                 link: '/components/space/',
               },
 
               {
-                text: 'button 按钮',
+                text: 'Button 按钮',
                 link: '/components/button/',
               },
 
               {
-                text: 'input 输入框',
+                text: 'Input 输入框',
                 link: '/components/input/',
               },
               {
-                text: 'tooltip 提示信息',
+                text: 'Tooltip 文字提示',
                 link: '/components/tooltip/',
               },
             ],

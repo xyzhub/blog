@@ -1,27 +1,44 @@
-import type { VNode, VNodeChild } from 'vue'
-import { createVNode, defineComponent, ref } from 'vue'
+import type { PropType, VNode, VNodeChild } from 'vue'
+import { computed, createVNode, defineComponent, ref } from 'vue'
+import type { Placement } from '@floating-ui/vue'
 import { useFloating } from '@floating-ui/vue'
 
 export default defineComponent({
+
   name: 'NTooltip',
+
+  props: {
+    title: {
+      type: String as PropType<string>,
+      default: 'placement text',
+    },
+    placement: {
+      type: String as PropType<Placement>,
+      default: 'top',
+    },
+  },
   setup(props, { slots }) {
     // const { c, cx, cm } = useGenClass('tooltip')
 
     const reference = ref(null)
     const floating = ref(null)
 
-    const { floatingStyles } = useFloating(reference, floating)
+    // ? 动态计算位置信息
+    const placement = computed(() => props.placement)
+
+    const { floatingStyles } = useFloating(reference, floating, {
+      placement,
+    })
 
     return () => {
       // ! tooltip 浮层依靠 reference 是否存在 来确定是否进行渲染显示
       const renderTooltip = () => {
         if (!reference.value)
           return null
-        return <div ref={floating} style={floatingStyles.value}>Tooltip</div>
+        return <div ref={floating} style={floatingStyles.value}>{props.title}</div>
       }
 
       // ! 获取插槽内容 渲染子节点
-
       // ! 注意 当父组件内含有 注释时 vue 也会将其作为一个虚拟dom 传递给子组件
 
       function filterEmpty(children: VNodeChild[]): VNodeChild[] {
@@ -36,12 +53,10 @@ export default defineComponent({
       const children = filterEmpty(slots.default?.() as VNodeChild[])
 
       // ? 若无子节点 则不进行渲染
-
       if (children && children.length < 1)
         return null
 
       // ? 若有多个子节点 则警告 只渲染第一个子节点
-
       if (children && children.length > 1) {
         console.warn('Tooltip can only have a child')
         return children
