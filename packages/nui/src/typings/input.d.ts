@@ -9,7 +9,7 @@ export interface InputProps {
   size?: 'sm' | 'lg'
 
   /** input 原生属性 */
-  autocomplete?: string
+  // autocomplete?: string
 
-  placeholder?: string
+  // placeholder?: string
 }

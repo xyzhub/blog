@@ -10,7 +10,7 @@ import type { InputProps } from 'nui/typings/input'
 
 import { nextTick, onMounted, ref, useAttrs, useSlots } from 'vue'
 
-import { omit } from 'lodash'
+import { omit, pick } from 'lodash'
 
 defineOptions({
   name: 'NInput', // ? 组件名称
@@ -31,6 +31,9 @@ defineSlots<{
   prefix(): any // ? 前缀插槽
   suffix(): any // ? 后缀插槽
 }>()
+
+// ? 约束父组件传递的属性是否在inputAttrProps上定义 如果在表明是input的属性 否则为包裹input的div上的属性
+const inputAttrProps = ['autocomplete', 'placeholder']
 
 // 获取父组件传递的插槽内容 也可以使用 $slot 获取
 const slot = useSlots()
@@ -101,14 +104,14 @@ defineExpose({
 </script>
 
 <template>
-  <div :class="cls" v-bind="omit(attrs, [''])">
+  <div :class="cls" v-bind="omit(attrs, inputAttrProps)">
     <span v-if="slot.prefix" :class="c(ce('prefix'))">
       <slot name="prefix" />
     </span>
     <input
       ref="inputRef" type="text"
       :disabled="disabled"
-      v-bind="attrs"
+      v-bind="pick(attrs, inputAttrProps)"
       :value="modelValue"
       @input="handleInput"
     >
