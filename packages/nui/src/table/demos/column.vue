@@ -2,24 +2,11 @@
 ---
 title:  代码演示
 ---
-使用`columns`属性绑定数据进行渲染表头
-`data`属性绑定表格数据内容
+使用`<n-table-column/> `组件进行渲染表头
 </docs>
 
 <script setup lang='ts'>
-import type { ColumnType } from 'nui/typings/table'
 import { ref } from 'vue'
-
-const columns = ref<ColumnType[]>([{
-  title: '姓名',
-  key: 'name',
-}, {
-  title: '年龄',
-  key: 'age',
-}, {
-  title: '密码',
-  key: 'pwd',
-}])
 
 const data = ref([
   {
@@ -44,6 +31,9 @@ const data = ref([
 
 <template>
   <n-space>
-    <n-table :columns="columns" :data="data" />
+    <n-table :data="data">
+      <n-table-column prop="name" title="姓名" />
+      <n-table-column prop="age" title="年龄" />
+    </n-table>
   </n-space>
 </template>

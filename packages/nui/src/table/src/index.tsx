@@ -19,7 +19,7 @@ function filterSlotColumns(columns: any) {
 export default defineComponent((props: TableProps, { slots }) => {
   return () => {
     /** ? 获取插槽内容 并过滤出非 TableColumn */
-    const slotColumns = filterSlotColumns(slots.default?.())
+    const slotColumns = filterSlotColumns(slots.default?.() ?? [])
 
     /**
      *  ? 需要渲染的列 优先级 传入的props column > slots column
