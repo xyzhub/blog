@@ -20,3 +20,12 @@ export interface TableProps {
   columns: ColumnType[]
   data: any[]
 }
+
+/**
+ * 表格BodyProps类型
+ *
+ */
+export interface BodyProps {
+  columns: ColumnType[]
+  data: any[]
+}

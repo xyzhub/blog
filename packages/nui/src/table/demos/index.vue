@@ -10,18 +10,38 @@ import { ref } from 'vue'
 
 const columns = ref<ColumnType[]>([{
   title: 'name',
-  key: '222',
+  key: '1',
 }, {
   title: 'age',
-  key: '222',
+  key: '2',
 }, {
   title: 'pwd',
-  key: '222',
+  key: '23',
 }])
+
+const data = ref([
+  {
+    name: 'zs',
+    age: '18',
+    pwd: 'p1',
+  },
+
+  {
+    name: 'lz',
+    age: '62',
+    pwd: 'p2',
+  },
+
+  {
+    name: 'ms',
+    age: '45',
+    pwd: 'p3',
+  },
+])
 </script>
 
 <template>
   <n-space>
-    <n-table :columns="columns" :data="[]" />
+    <n-table :columns="columns" :data="data" />
   </n-space>
 </template>

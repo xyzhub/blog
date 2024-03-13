@@ -7,14 +7,17 @@ export const Header = defineComponent<HeaderProps>({
   name: 'Header',
   setup(props = { columns: [] }) {
     return () => {
+      const renderColumn = () => {
+        return props.columns.map((column: ColumnType) => (
+          <th key={column.key}>
+            {column.title}
+          </th>
+        ))
+      }
       return (
         <thead>
           <tr>
-            {props.columns.length && props.columns.map((column: ColumnType) => (
-              <th key={column.key}>
-                {column.title}
-              </th>
-            ))}
+            {props.columns.length && renderColumn()}
           </tr>
         </thead>
       )
