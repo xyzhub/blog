@@ -42,6 +42,8 @@ const data = ref([
 
 <template>
   <n-space>
-    <n-table :columns="columns" :data="data" />
+    <n-table :columns="columns" :data="data">
+      <n-table-column>121212</n-table-column>
+    </n-table>
   </n-space>
 </template>
