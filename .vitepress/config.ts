@@ -92,6 +92,10 @@ export default defineConfig({
                 text: 'Tooltip 文字提示',
                 link: '/components/tooltip/',
               },
+              {
+                text: 'table 表格',
+                link: '/components/table/',
+              },
             ],
           },
           {
