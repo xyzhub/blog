@@ -10,14 +10,14 @@ export const Body = defineComponent<BodyProps>({
        * 单元格渲染
        */
       const renderCell = (row: any) => {
-        return columns.map(col => (<td>{row[col.title]}</td>))
+        return columns?.map(col => (<td>{row[col.key]}</td>))
       }
 
       /**
        * 行渲染
        */
       const renderRow = () => {
-        return data.map(row => (
+        return data?.map(row => (
           <tr>
             { renderCell(row) }
           </tr>

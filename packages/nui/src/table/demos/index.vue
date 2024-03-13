@@ -9,14 +9,14 @@ import type { ColumnType } from 'nui/typings/table'
 import { ref } from 'vue'
 
 const columns = ref<ColumnType[]>([{
-  title: 'name',
-  key: '1',
+  title: 'columnsName',
+  key: 'name',
 }, {
-  title: 'age',
-  key: '2',
+  title: 'columnsAge',
+  key: 'age',
 }, {
-  title: 'pwd',
-  key: '23',
+  title: 'columnsPwd',
+  key: 'pwd',
 }])
 
 const data = ref([
@@ -43,7 +43,9 @@ const data = ref([
 <template>
   <n-space>
     <n-table :columns="columns" :data="data">
-      <n-table-column>121212</n-table-column>
+      <n-table-column prop="name" title="Name" />
+      <n-table-column prop="age" title="Age" />
+      <n-button />
     </n-table>
   </n-space>
 </template>

@@ -17,8 +17,8 @@ export interface HeaderProps {
  * 表格Props类型
  */
 export interface TableProps {
-  columns: ColumnType[]
-  data: any[]
+  columns?: ColumnType[]
+  data?: any[]
 }
 
 /**
@@ -26,6 +26,6 @@ export interface TableProps {
  *
  */
 export interface BodyProps {
-  columns: ColumnType[]
-  data: any[]
+  columns?: ColumnType[]
+  data?: any[]
 }
