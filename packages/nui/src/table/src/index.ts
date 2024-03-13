@@ -1,7 +1,8 @@
 import type { App } from 'vue'
+
 import NTable from './index.tsx'
 
-NTable.install = (app: App) => {
+(NTable as any).install = (app: App) => {
   app.component(NTable.name, NTable)
 }
 
