@@ -26,11 +26,13 @@ export default defineComponent((props: TableProps, { slots }) => {
      */
     const renderColums: any[] = []
 
+    // ? 判断是否传入了columns
     if (props.columns?.length) {
       renderColums.push(...props.columns)
       slotColumns.length = 0
     }
 
+    // ? 判断有效的插槽内容是否存在
     if (slotColumns.length) {
       // 收集 slotColumns 下传递的数据
       slotColumns.forEach((item: any) => {
