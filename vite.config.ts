@@ -4,12 +4,14 @@ import { defineConfig } from 'vite'
 import VitePluginVitepressDemo from 'vite-plugin-vitepress-demo'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import tsxResolveTypes from 'vite-plugin-tsx-resolve-types'
 
 const baseUrl = fileURLToPath(new URL('.', import.meta.url)) // ? 获取基础路径
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    tsxResolveTypes(),
     vueJsx(),
     VitePluginVitepressDemo({
       glob: './**/demos/*.vue',
