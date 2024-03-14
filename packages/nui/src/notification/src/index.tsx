@@ -1,14 +1,15 @@
+import { useGenClass } from '@nui/utils'
+import type { NotificationProps } from 'nui/typings/notification'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'NNotification',
   setup() {
-    const msgList = ref<any[]>([])
+    const msgList = ref<Partial<NotificationProps>[]>([])
 
     const add = () => {
       msgList.value.push({
-        msg: `${new Date().getTime()}msg`,
-        time: new Date().getTime(),
+        content: `${new Date().getTime()}msg`,
       })
     }
 
@@ -16,15 +17,25 @@ export default defineComponent({
       msgList.value.shift()
     }
 
+    // ? 处理notification 样式
+
+    const { c } = useGenClass('notification')
+
+    const containerCls = {
+      [c()]: true,
+    }
+
+    const itemCls = {
+      [c('item')]: true,
+    }
+
     return () => {
       const renderMsg = () => {
         return msgList.value.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} class={itemCls}>
               <span class="time">
-                {item.msg}
-                --
-                {item.time}
+                {item.content}
               </span>
             </div>
           )
@@ -33,13 +44,15 @@ export default defineComponent({
 
       return (
         <>
-          <div>notification</div>
           <div>
             <button onClick={add}>增加</button>
             <button onClick={remove}>减少</button>
           </div>
 
-          {renderMsg()}
+          <div class={containerCls}>
+            {renderMsg()}
+          </div>
+
         </>
       )
     }
