@@ -5,6 +5,7 @@ import type NTooltip from '../tooltip/src/index.tsx'
 import type NTable from '../table/src/index.tsx'
 import type NTableColumn from '../table/src/table-column/index.tsx'
 import type NVirtualList from '../virtual-list/src/index.tsx'
+import type NNotification from '../notification/src/index.tsx'
 
 declare module 'vue' {
   interface GlobalComponents {
@@ -15,5 +16,6 @@ declare module 'vue' {
     NTable: typeof NTable
     NTableColumn: typeof NTableColumn
     NVirtualList: typeof NVirtualList
+    NNotification: typeof NNotification
   }
 }

@@ -100,6 +100,10 @@ export default defineConfig({
                 text: 'Virtual List 虚拟列表',
                 link: '/components/virtual-list/',
               },
+              {
+                text: 'Notification 消息通知',
+                link: '/components/notification/',
+              },
             ],
           },
           {
