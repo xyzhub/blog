@@ -22,7 +22,7 @@ export default defineComponent({
       default: 5,
     },
   },
-  setup(props) {
+  setup(props, { slots }) {
     const { c } = useGenClass('virtual-list')
 
     // ? 监听滚动事件
@@ -77,11 +77,12 @@ export default defineComponent({
       conatinerRef,
       containerHeight,
       sliceItem,
+      slots,
     }
   },
 
   render() {
-    const { c, height, data, itemHeight, sliceItem } = this
+    const { c, height, data, itemHeight, sliceItem, slots } = this
 
     /* containerCls 为可视区域 */
     const containerCls = {
@@ -120,14 +121,18 @@ export default defineComponent({
           top: `${top}px`,
         }
 
-        return <div class={itemCls} style={itemStyle} key={key}>{key}</div>
+        return (
+          <div class={itemCls} style={itemStyle} key={key}>
+            {slots.item && slots.item({ item: li.content })}
+          </div>
+        )
       })
     }
 
     return (
       <div class={containerCls} style={containerProperties} ref="conatinerRef">
         <div class={bodyCls} style={bodyProperties}>
-          {renderItems()}
+          {renderItems().length && renderItems()}
         </div>
       </div>
     )

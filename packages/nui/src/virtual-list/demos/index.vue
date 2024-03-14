@@ -10,9 +10,18 @@ const data = Array(1000).fill(0).map((_, index) => ({
 </script>
 
 <template>
-  <n-virtual-list :data="data" />
+  <n-virtual-list :data="data">
+    <template #item="{ item }">
+      <div class="virtual-item">
+        {{ item.address }}
+      </div>
+    </template>
+  </n-virtual-list>
 </template>
 
 <style scoped lang='less'>
-
+.virtual-item {
+  display: flex;
+  justify-content: left;
+}
 </style>
