@@ -1,11 +1,16 @@
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'NVirtualList',
   setup() {
-    return () => {
-      return <div>virtual list</div>
+    const str = ref<string>('6666')
+    return {
+      str,
     }
+  },
+
+  render() {
+    return <div>{ this.str }</div>
   },
 
 })
