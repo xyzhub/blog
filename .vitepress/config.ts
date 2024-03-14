@@ -93,8 +93,12 @@ export default defineConfig({
                 link: '/components/tooltip/',
               },
               {
-                text: 'table 表格',
+                text: 'Table 表格',
                 link: '/components/table/',
+              },
+              {
+                text: 'Virtual List 虚拟列表',
+                link: '/components/virtual-list/',
               },
             ],
           },
