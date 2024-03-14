@@ -7,10 +7,14 @@ const data = Array(1000).fill(0).map((_, index) => ({
   address: `address${index}`,
   phone: '1234567890',
 }))
+
+function handleClickItem(item: any) {
+  console.log(item)
+}
 </script>
 
 <template>
-  <n-virtual-list :data="data">
+  <n-virtual-list :data="data" @click-item="handleClickItem">
     <template #item="{ item }">
       <div class="virtual-item">
         {{ item.address }}

@@ -22,7 +22,8 @@ export default defineComponent({
       default: 5,
     },
   },
-  setup(props, { slots }) {
+  emits: ['clickItem'],
+  setup(props, { slots, emit }) {
     const { c } = useGenClass('virtual-list')
 
     // ? 监听滚动事件
@@ -72,17 +73,22 @@ export default defineComponent({
       })
     })
 
+    const handleClick = (e: any) => {
+      emit('clickItem', e)
+    }
+
     return {
       c,
       conatinerRef,
       containerHeight,
       sliceItem,
       slots,
+      handleClick,
     }
   },
 
   render() {
-    const { c, height, data, itemHeight, sliceItem, slots } = this
+    const { c, height, data, itemHeight, sliceItem, slots, handleClick } = this
 
     /* containerCls 为可视区域 */
     const containerCls = {
@@ -121,8 +127,12 @@ export default defineComponent({
           top: `${top}px`,
         }
 
+        const itemEvent = {
+          onClick: () => handleClick(li.content),
+        }
+
         return (
-          <div class={itemCls} style={itemStyle} key={key}>
+          <div class={itemCls} style={itemStyle} key={key} {...itemEvent}>
             {slots.item && slots.item({ item: li.content })}
           </div>
         )
