@@ -1,5 +1,6 @@
 import { defineComponent } from 'vue'
 import type { TableProps } from 'nui/typings/table'
+import { useGenClass } from '@nui/utils'
 import { Header } from './header'
 import { Body } from './body'
 
@@ -47,13 +48,21 @@ export default defineComponent((props: TableProps, { slots }) => {
     if (!renderColums.length)
       return
 
+    /** 样式 */
+    const { c, cx } = useGenClass('table')
+
+    const tableCls = cx(() => {
+      return {
+        [c()]: true,
+      }
+    })
+
     return (
-      <div>
-        <table>
-          <Header columns={renderColums} v-slots={slots} />
-          <Body columns={renderColums} data={props.data} />
-        </table>
-      </div>
+      <table class={tableCls.value}>
+        <Header columns={renderColums} v-slots={slots} />
+        <Body columns={renderColums} data={props.data} />
+      </table>
+
     )
   }
 }, {
