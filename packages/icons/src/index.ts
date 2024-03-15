@@ -1,3 +1,1 @@
-export function test() {
-  console.log('test')
-}
+export { default as Setting } from './setting.vue'

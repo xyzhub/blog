@@ -1,15 +1,22 @@
 <script setup lang='ts'>
-import { test } from '@nui/icons'
+import { Setting } from '@nui/icons'
 
-test()
+import { NSpace } from 'nui'
 </script>
 
 <template>
-  <div class="container">
-    icons
-  </div>
+  <NSpace>
+    <Setting />
+  </NSpace>
+
+  <NSpace class="warp">
+    <Setting />
+  </NSpace>
 </template>
 
 <style scoped lang='less'>
+.warp{
 
+  font-size: 24px;
+}
 </style>
