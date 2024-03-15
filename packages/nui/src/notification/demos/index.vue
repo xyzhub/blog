@@ -9,7 +9,7 @@ const instance = getCurrentInstance()
 function open() {
   Notification.info({
     title: '提示',
-    content: h(content),
+    content: h(content), // ! 使用h函数转vnode
     duration: 5000,
     appContext: instance?.appContext,
   })
