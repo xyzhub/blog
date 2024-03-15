@@ -140,11 +140,12 @@
 /* Scrollbar
 --------------------------------------------------------------*/
 ::-webkit-scrollbar {
-	width: 5px;
-	background-color: #f6f8fe;
+  display: none;
+	/* width: 5px;
+	background-color: #f6f8fe; */
 }
 
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
 	background-color: #747474;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
@@ -155,4 +156,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #7a49fe;;
-}
+} */

@@ -39,7 +39,6 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
-
     // https://vitepress.dev/reference/default-theme-config
     // ? 导航区域配置
     nav: [
@@ -48,17 +47,10 @@ export default defineConfig({
         text: '记录',
         items: [
           {
-            text: 'vue',
-            link: '/vue',
-          },
-          {
             text: '组件库',
             items: [
               { text: '组件', link: '/components/' },
-              {
-                text: '工具',
-                link: '/utils/',
-              },
+              { text: '工具', link: '/utils/' },
             ],
           },
         ],
@@ -67,63 +59,65 @@ export default defineConfig({
     ],
 
     // ? 侧边栏
-    sidebar: [
-      {
-        text: '组件库',
-        items: [
-          {
-            text: '组件',
-            collapsed: false,
-            items: [
-              {
-                text: 'Space 间隔',
-                link: '/components/space/',
-              },
+    sidebar: {
+      '/components/': [
+        {
+          text: '组件',
+          collapsed: false,
+          items: [
+            {
+              text: 'Space 间隔',
+              link: '/components/space/',
+            },
 
-              {
-                text: 'Button 按钮',
-                link: '/components/button/',
-              },
+            {
+              text: 'Button 按钮',
+              link: '/components/button/',
+            },
 
-              {
-                text: 'Input 输入框',
-                link: '/components/input/',
-              },
-              {
-                text: 'Tooltip 文字提示',
-                link: '/components/tooltip/',
-              },
-              {
-                text: 'Table 表格',
-                link: '/components/table/',
-              },
-              {
-                text: 'Virtual List 虚拟列表',
-                link: '/components/virtual-list/',
-              },
-              {
-                text: 'Notification 消息通知',
-                link: '/components/notification/',
-              },
-              {
-                text: 'Icons 图标',
-                link: '/components/icons/',
-              },
-            ],
-          },
-          {
-            text: '工具',
-            collapsed: false,
-            items: [
-              {
-                text: 'useGenClass',
-                link: '/utils/useGenClass/',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+            {
+              text: 'Input 输入框',
+              link: '/components/input/',
+            },
+            {
+              text: 'Tooltip 文字提示',
+              link: '/components/tooltip/',
+            },
+            {
+              text: 'Table 表格',
+              link: '/components/table/',
+            },
+            {
+              text: 'Virtual List 虚拟列表',
+              link: '/components/virtual-list/',
+            },
+            {
+              text: 'Notification 消息通知',
+              link: '/components/notification/',
+            },
+            {
+              text: 'Icons 图标',
+              link: '/components/icons/',
+            },
+          ],
+        },
+
+      ],
+      '/utils/': [
+        {
+          text: '工具',
+          collapsed: false,
+          items: [
+            {
+              text: 'useGenClass',
+              link: '/utils/useGenClass/',
+            },
+          ],
+        },
+      ],
+
+    },
+
     // 侧边栏文字更改(移动端)
     sidebarMenuLabel: '目录',
 
