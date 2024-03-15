@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { Notification } from 'nui'
+import { NNotification } from 'nui'
 import { getCurrentInstance, h } from 'vue'
 
 import content from './components/content.vue'
@@ -7,7 +7,7 @@ import content from './components/content.vue'
 const instance = getCurrentInstance()
 
 function open() {
-  Notification.info({
+  NNotification.info({
     title: '提示',
     content: h(content), // ! 使用h函数转vnode
     duration: 5000,
