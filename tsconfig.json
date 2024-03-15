@@ -12,6 +12,7 @@
     "moduleResolution": "bundler",
     "paths": {
       "@nui/utils": ["packages/utils/src"], // 处理对应路径下的映射关系
+      "@nui/icons": ["packages/icons/src"], // 处理对应路径下的映射关系
       "nui": ["packages/nui/src"],
       "nui/*": ["packages/nui/src/*"]
     },

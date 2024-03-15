@@ -29,6 +29,11 @@ export default defineConfig({
         find: /^@nui\/utils/,
         replacement: path.resolve(baseUrl, 'packages/utils/src'), // ? 组装为绝对路径
       },
+
+      {
+        find: /^@nui\/icons/,
+        replacement: path.resolve(baseUrl, 'packages/icons/src'), // ? 组装为绝对路径
+      },
     ],
   },
 })

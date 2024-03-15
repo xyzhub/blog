@@ -12,6 +12,7 @@ export default defineConfig({
     'docs/(.*)': '(.*)', // ? 配置根目录映射
     'packages/nui/src/:comp/(.*)': 'components/:comp/(.*)', // ? 这里的:comp/ 表示相同文件结构可以 使用动态路由参数 简历映射 :后的变量可以理解为占位符
     'packages/utils/src/(.*)': 'utils/(.*)',
+    'packages/icons/src/(.*)': 'components/icons/(.*)',
   },
 
   // markdown配置
@@ -103,6 +104,10 @@ export default defineConfig({
               {
                 text: 'Notification 消息通知',
                 link: '/components/notification/',
+              },
+              {
+                text: 'Icons 图标',
+                link: '/components/icons/',
               },
             ],
           },
