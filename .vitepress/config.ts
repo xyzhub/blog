@@ -4,9 +4,23 @@ import timeline from 'vitepress-markdown-timeline'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '红猪',
-  description: '欢迎来到我的小站',
-
+  lang: 'zh-CN',
+  title: 'Porco',
+  description: '个人小站',
+  head: [
+    ['link', { rel: 'icon', href: '/logo.svg' }],
+    [
+      'link',
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap',
+      },
+    ],
+  ],
   // ? 路由重写
   rewrites: {
     'docs/(.*)': '(.*)', // ? 配置根目录映射
