@@ -9,4 +9,6 @@ export interface NotificationProps {
   closable: boolean
   /** 通知关闭按钮回调 */
   onClose: () => void
+
+  _id?: string
 }

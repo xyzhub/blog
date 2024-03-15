@@ -1,6 +1,6 @@
 import { useGenClass } from '@nui/utils'
 import type { NotificationProps } from 'nui/typings/notification'
-import { defineComponent, ref } from 'vue'
+import { TransitionGroup, defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'NNotification',
@@ -10,6 +10,7 @@ export default defineComponent({
     const add = () => {
       msgList.value.push({
         content: `${new Date().getTime()}msg`,
+        _id: `${new Date().getTime()}`,
       })
     }
 
@@ -29,14 +30,21 @@ export default defineComponent({
       [c('item')]: true,
     }
 
+    const titleCls = {
+      [c('warp', 'title')]: true,
+    }
+
+    const contentCls = {
+      [c('warp', 'content')]: true,
+    }
+
     return () => {
       const renderMsg = () => {
-        return msgList.value.map((item, index) => {
+        return msgList.value.map((item) => {
           return (
-            <div key={index} class={itemCls}>
-              <span class="time">
-                {item.content}
-              </span>
+            <div key={item._id} class={itemCls}>
+              <div class={titleCls}>title</div>
+              <div class={contentCls}>{item.content}</div>
             </div>
           )
         })
@@ -50,7 +58,9 @@ export default defineComponent({
           </div>
 
           <div class={containerCls}>
-            {renderMsg()}
+            <TransitionGroup name="nui-slide-right" tag="div">
+              {renderMsg()}
+            </TransitionGroup>
           </div>
 
         </>

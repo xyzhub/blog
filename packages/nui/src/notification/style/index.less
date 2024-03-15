@@ -1,9 +1,9 @@
 .nui-notification {
   position: fixed;
   top: 0;
-  right: 20px;
+  right: 30px;
   z-index: 1000;
-  
+  box-sizing: border-box;
   &-item {
     border-radius: 8px;
     margin-bottom: 20px;
@@ -13,4 +13,24 @@
     box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   }
 
+}
+
+
+
+
+.nui-slide-right-enter-active,
+.nui-slide-right-leave-active ,
+.nui-slide-right-move
+{
+  transition: all 0.3s ease-in-out;
+}
+
+.nui-slide-right-enter-from,
+.nui-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.nui-slide-right-leave-active {
+ position: absolute;
 }
