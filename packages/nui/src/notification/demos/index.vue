@@ -1,11 +1,17 @@
 <script setup lang='ts'>
 import { Notification } from 'nui'
+import { getCurrentInstance, h } from 'vue'
+
+import content from './components/content.vue'
+
+const instance = getCurrentInstance()
 
 function open() {
   Notification.info({
     title: '提示',
-    content: '这是一条提示信息',
+    content: h(content),
     duration: 5000,
+    appContext: instance?.appContext,
   })
 }
 </script>

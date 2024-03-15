@@ -1,12 +1,13 @@
-import type { App } from 'vue'
+import type { App, VNode } from 'vue'
 
 export interface NotificationProps {
   /** 通知标题 */
   title: string
   /** 通知内容 */
-  content: string
+  content: string | VNode
   /** 通知时间 */
   duration?: number
+  appContext?: any
 }
 
 export interface NotificationConfig extends NotificationProps {

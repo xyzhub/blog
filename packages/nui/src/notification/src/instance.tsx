@@ -13,7 +13,7 @@ export function createNotificationInstance() {
   const info = (configProps: NotificationProps) => {
     // ! 实例是否存在
     if (!instance) {
-      //  不存在则创建实例
+      //  ?不存在则创建实例
       const body = document.body // 挂载到body
       const vm = createVNode(Notification, {
         // ? 通过onReady获取实例
@@ -22,6 +22,12 @@ export function createNotificationInstance() {
           instance.add(configProps)
         },
       })
+
+      // ! 解决传入的vnode 为自定义组件时 组件无法正确解析的问题
+      // ? 原因是因为当前的组件实例 与 vue实例脱离
+      if (configProps.appContext)
+        vm.appContext = configProps.appContext
+
       // ? 渲染组件
       render(vm, body)
     }
