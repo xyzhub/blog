@@ -18,7 +18,15 @@ export default defineConfig({
   },
 
   test: {
-    globals: true, // ? 全局api开启
+    globals: true,
     environment: 'jsdom',
+    reporters: ['default', 'html'],
+    coverage: {
+      enabled: true,
+      provider: 'v8',
+      reporter: ['html'],
+      include: ['packages/*', '!packages/**/docs', '!packages/**/demos'], // ? 需要测试覆盖的的文件 排除demos和docs
+    },
   },
+
 })

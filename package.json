@@ -7,7 +7,8 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "gen:colors": "esno ./script/gen-colors.ts",
-    "test": "vitest"
+    "test": "vitest --ui",
+    "coverage": "vitest --coverage --ui"
   },
   "dependencies": {
     "vue": "^3.4.19"
@@ -18,6 +19,8 @@
     "@types/node": "^20.11.25",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vitest/coverage-v8": "^1.4.0",
+    "@vitest/ui": "^1.4.0",
     "@vue/test-utils": "^2.4.5",
     "add": "^2.0.6",
     "eslint": "^8.57.0",
