@@ -15,4 +15,9 @@ export default defineConfig({
   resolve: {
     alias,
   },
+
+  test: {
+    globals: true, // ? 全局api开启
+    environment: 'jsdom',
+  },
 })

@@ -6,7 +6,8 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "gen:colors": "esno ./script/gen-colors.ts"
+    "gen:colors": "esno ./script/gen-colors.ts",
+    "test": "vitest"
   },
   "dependencies": {
     "vue": "^3.4.19"
