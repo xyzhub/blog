@@ -1,11 +1,33 @@
 {
   "name": "nui",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "vue3 library",
+  "author": "xyzhub <xyz2292010532@gmail.com>",
   "license": "ISC",
-  "keywords": [],
-  "main": "index.js",
+  "keywords": [
+    "vue3",
+    "vue",
+    "component"
+  ],
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts", // ? 指定当前目录 导出cjs esm
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./es/*": "./es/*",
+    "./dist/*": "./dist/*",
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json"
+  },
+  "main": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [ // ? 配置上传的文件
+    "dist",
+    "es",
+    "lib"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
@@ -14,7 +36,8 @@
   },
   "devDependencies": {
     "@floating-ui/vue": "^1.0.6",
+    "@nui/utils": "workspace:*",
     "@types/lodash": "^4.14.202",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21" // ? *对应当前utils的版本号
   }
 }
