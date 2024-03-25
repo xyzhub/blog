@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
+    "build": "vite build",
+    "build:umd": "vite build --config vite.umd.config.ts"
   },
   "devDependencies": {
     "@floating-ui/vue": "^1.0.6",
