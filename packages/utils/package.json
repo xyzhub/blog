@@ -1,7 +1,7 @@
 {
   "name": "@nvcui/utils",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "this is utils",
   "author": "xyzhub <xyz2292010532@gmail.com>",
   "license": "MIT",
@@ -17,12 +17,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.d.mts",
-      "require": "./dist/index.d.cts"
+      "import": "./dist/index.d.mjs",
+      "require": "./dist/index.d.cjs"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.d.mts",
+  "main": "./dist/index.d.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "unbuild"
