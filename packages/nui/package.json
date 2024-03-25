@@ -12,7 +12,7 @@
   ],
   "exports": {
     ".": {
-      "types": "./es/index.d.ts", // ? 指定当前目录 导出cjs esm
+      "types": "./es/index.d.ts",
       "import": "./es/index.js",
       "require": "./lib/index.js"
     },
@@ -23,7 +23,7 @@
   },
   "main": "es/index.js",
   "types": "es/index.d.ts",
-  "files": [ // ? 配置上传的文件
+  "files": [
     "dist",
     "es",
     "lib"
@@ -38,6 +38,7 @@
     "@floating-ui/vue": "^1.0.6",
     "@nui/utils": "workspace:*",
     "@types/lodash": "^4.14.202",
-    "lodash": "^4.17.21" // ? *对应当前utils的版本号
+    "lodash": "^4.17.21"
+
   }
 }
