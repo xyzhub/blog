@@ -9,7 +9,7 @@ import 'vitepress-markdown-timeline/dist/theme/index.css'
 
 import './style.css'
 
-import nui from 'nui'
+// import nui from 'nui'
 import 'nui/style.ts'
 
 export default {
@@ -23,6 +23,6 @@ export default {
     // ? 注册组件
     app.component('Demo', AntdTheme)
     // ? 注册全局组件
-    app.use(nui)
+    // app.use(nui)
   },
 } satisfies Theme
