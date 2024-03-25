@@ -24,7 +24,7 @@ export default defineConfig({
   // ? 路由重写
   rewrites: {
     'docs/(.*)': '(.*)', // ? 配置根目录映射
-    'packages/nui/src/:comp/(.*)': 'components/:comp/(.*)', // ? 这里的:comp/ 表示相同文件结构可以 使用动态路由参数 简历映射 :后的变量可以理解为占位符
+    'packages/nvcui/src/:comp/(.*)': 'components/:comp/(.*)', // ? 这里的:comp/ 表示相同文件结构可以 使用动态路由参数 简历映射 :后的变量可以理解为占位符
     'packages/utils/src/(.*)': 'utils/(.*)',
     'packages/icons/src/(.*)': 'components/icons/(.*)',
   },

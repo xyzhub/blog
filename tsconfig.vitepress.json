@@ -9,7 +9,7 @@
     ".vitepress/**/*.tsx",
     ".vitepress/**/*.vue",
     ".vitepress/*.ts",
-    "packages/nui/src/**/*" // 解决 "composite": true 后vitepress ts报错的问题
+    "packages/nvcui/src/**/*" // 解决 "composite": true 后vitepress ts报错的问题
   ],
   "exclude": [
     "node_modules"

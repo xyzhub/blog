@@ -7,10 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    NButton: typeof import('nui')['NButton']
-    NInput: typeof import('nui')['NInput']
-    NSpace: typeof import('nui')['NSpace']
-    NTooltip: typeof import('nui')['NTooltip']
-    NVirtualList: typeof import('nui')['NVirtualList']
+    NButton: typeof import('nvcui')['NButton']
+    NInput: typeof import('nvcui')['NInput']
+    NSpace: typeof import('nvcui')['NSpace']
+    NTable: typeof import('nvcui')['NTable']
+    NTableColumn: typeof import('nvcui')['NTableColumn']
+    NTooltip: typeof import('nvcui')['NTooltip']
+    NVirtualList: typeof import('nvcui')['NVirtualList']
   }
 }

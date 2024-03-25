@@ -16,7 +16,7 @@ type BEMTYPE = string | [string, 'B' | 'E' | 'M' | undefined]
  * @returns componentClassName
  */
 export function useGenClass(componentName: string) {
-  const prefix: string = 'nui'
+  const prefix: string = 'nvcui'
 
   const clsname = `${prefix}-${componentName}`
 

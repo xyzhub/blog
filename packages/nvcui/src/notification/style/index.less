@@ -1,0 +1,34 @@
+.nvcui-notification {
+  position: fixed;
+  top: 0;
+  right: 30px;
+  z-index: 1000;
+  box-sizing: border-box;
+  &-item {
+    width: 275px;
+    min-height: 65px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.nvcui-slide-right-enter-active,
+.nvcui-slide-right-leave-active ,
+.nvcui-slide-right-move
+{
+  transition: all 0.3s ease-in-out;
+}
+
+.nvcui-slide-right-enter-from,
+.nvcui-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.nvcui-slide-right-leave-active {
+ position: absolute;
+}

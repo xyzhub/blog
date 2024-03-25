@@ -10,7 +10,7 @@ import fs from 'fs-extra'
 import less from 'less'
 
 // ? 获取目录地址
-const nuiDir = fileURLToPath(new URL('../packages/nui', import.meta.url))
+const nuiDir = fileURLToPath(new URL('../packages/nvcui', import.meta.url))
 
 // ? 遍历文件 获取less
 

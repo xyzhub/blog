@@ -7,5 +7,5 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true
   },
-  "include": ["vite.config.ts", "vitest.config.ts", "./**/*.ts", "packages/nui/src/button/test/index.test.tsx"]
+  "include": ["vite.config.ts", "vitest.config.ts", "./**/*.ts", "packages/nvcui/src/button/test/index.test.tsx"]
 }

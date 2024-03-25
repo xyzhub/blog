@@ -5,17 +5,17 @@ const baseUrl = fileURLToPath(new URL('..', import.meta.url)) // ? 获取基础�
 
 const alias = [
   {
-    find: /^nui/,
-    replacement: path.resolve(baseUrl, 'packages/nui/src'), // ? 组装为绝对路径
+    find: /^nvcui/,
+    replacement: path.resolve(baseUrl, 'packages/nvcui/src'), // ? 组装为绝对路径
   },
 
   {
-    find: /^@nui\/utils/,
+    find: /^@nvcui\/utils/,
     replacement: path.resolve(baseUrl, 'packages/utils/src'), // ? 组装为绝对路径
   },
 
   {
-    find: /^@nui\/icons/,
+    find: /^@nvcui\/icons/,
     replacement: path.resolve(baseUrl, 'packages/icons/src'), // ? 组装为绝对路径
   },
 ]

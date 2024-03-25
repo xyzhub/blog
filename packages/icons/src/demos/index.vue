@@ -1,7 +1,7 @@
 <script setup lang='ts'>
-import { Setting } from '@nui/icons'
+import { Setting } from '@nvcui/icons'
 
-import { NSpace } from 'nui'
+import { NSpace } from 'nvcui'
 </script>
 
 <template>
