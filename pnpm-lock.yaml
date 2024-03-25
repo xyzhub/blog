@@ -110,6 +110,9 @@ importers:
       '@floating-ui/vue':
         specifier: ^1.0.6
         version: 1.0.6(vue@3.4.21)
+      '@nui/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@types/lodash':
         specifier: ^4.14.202
         version: 4.14.202
