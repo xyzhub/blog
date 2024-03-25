@@ -17,12 +17,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.d.mjs",
-      "require": "./dist/index.d.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.d.mjs",
+  "main": "./dist/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "unbuild"
