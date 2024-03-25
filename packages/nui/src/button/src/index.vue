@@ -1,8 +1,10 @@
 <script lang='ts'>
-import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
+
+import type { PropType } from 'vue'
 import { useGenClass } from '@nui/utils'
-import type { ButtonSize, ButtonType } from '../../typings/button'
+
+import type { ButtonSize, ButtonType } from 'nui/typings/button'
 
 export default defineComponent({
   name: 'NButton',
@@ -13,7 +15,7 @@ export default defineComponent({
     },
     size: {
       type: String as PropType<ButtonSize>,
-      required: false,
+      default: '',
     },
   },
   emits: ['click'],
@@ -42,7 +44,6 @@ export default defineComponent({
     return {
       cls,
       handleClick,
-      props,
     }
   },
 })
