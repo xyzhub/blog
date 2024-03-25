@@ -4,8 +4,21 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import tsxResolveTypes from 'vite-plugin-tsx-resolve-types'
+import fs from 'fs-extra'
 
 const baseUrl = fileURLToPath(new URL('.', import.meta.url)) // ? 获取基础路径
+
+function removeCss() {
+  return {
+    name: 'remove:style.css',
+    closeBundle() {
+      const targetPath = fileURLToPath(new URL('./dist', import.meta.url))
+      const styleFilePath = path.join(targetPath, 'style.css')
+      fs.removeSync(styleFilePath)
+    },
+
+  }
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,17 +26,14 @@ export default defineConfig({
     tsxResolveTypes(),
     vueJsx(),
     vue(),
-
+    removeCss(),
   ],
   resolve: {
-
     alias: [
-
       {
         find: /^@nui\/utils/,
         replacement: path.resolve(baseUrl, '../utils/src'), // ? 组装为绝对路径
       },
-
     ],
   },
 
@@ -31,7 +41,6 @@ export default defineConfig({
     rollupOptions: {
       external: ['vue'],
       output: {
-
         exports: 'named',
         globals: {
           vue: 'vue', // ? 配置打包后全局变量名称
@@ -47,4 +56,5 @@ export default defineConfig({
     },
 
   },
+
 })

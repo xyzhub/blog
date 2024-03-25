@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
-    "build:umd": "vite build --config vite.umd.config.ts"
+    "build:umd": "vite build --config vite.umd.config.ts",
+    "build:style": "vite build --config vite.style.config.ts"
   },
   "devDependencies": {
     "@floating-ui/vue": "^1.0.6",
