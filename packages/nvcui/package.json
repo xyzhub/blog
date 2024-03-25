@@ -1,7 +1,7 @@
 {
   "name": "nvcui",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "vue3 library",
   "author": "xyzhub <xyz2292010532@gmail.com>",
   "license": "MIT",
@@ -34,11 +34,10 @@
     "build:umd": "vite build --config vite.umd.config.ts",
     "build:style": "vite build --config vite.style.config.ts"
   },
-  "devDependencies": {
+  "dependencies": {
     "@floating-ui/vue": "^1.0.6",
     "@nvcui/utils": "workspace:*",
     "@types/lodash": "^4.14.202",
     "lodash": "^4.17.21"
-
   }
 }
