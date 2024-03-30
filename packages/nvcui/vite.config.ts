@@ -43,6 +43,12 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts', // 入口
     },
-
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
   },
 })
