@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'Porco',
   description: '个人小站',
   // eslint-disable-next-line node/prefer-global/process
-  base: process.env.production === 'production' ? '/nvcui/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/nvcui/' : '/',
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
     [
