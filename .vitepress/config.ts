@@ -7,6 +7,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'Porco',
   description: '个人小站',
+  base: '/',
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
     [
