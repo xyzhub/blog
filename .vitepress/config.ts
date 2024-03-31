@@ -2,15 +2,17 @@ import { defineConfig } from 'vitepress'
 
 import timeline from 'vitepress-markdown-timeline'
 
+// eslint-disable-next-line node/prefer-global/process
+const base = process.env.NODE_ENV === 'production' && !process.env.NODE_ENV_VERCEL ? '/nvcui/' : '/'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Porco',
   description: '个人小站',
-  // eslint-disable-next-line node/prefer-global/process
-  base: process.env.NODE_ENV === 'production' && !process.env.NODE_ENV_VERCEL ? '/nvcui/' : '/',
+  base,
   head: [
-    ['link', { rel: 'icon', href: '/logo.svg' }],
+    ['link', { rel: 'icon', href: `${base}logo.svg` }],
     [
       'link',
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
