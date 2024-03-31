@@ -1,10 +1,12 @@
-{ "name": "blog",
+{
+  "name": "blog",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
     "prepare": "husky install",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
+    "docs_vercel:build": "cross-env NODE_ENV_VERCEL=true && vitepress build",
     "docs:preview": "vitepress preview",
     "gen:colors": "esno ./script/gen-colors.ts",
     "bundle:css": "esno ./script/css-bundle.ts",
@@ -26,6 +28,7 @@
     "@vitest/ui": "^1.4.0",
     "@vue/test-utils": "^2.4.5",
     "add": "^2.0.6",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "esno": "^4.7.0",
     "fast-glob": "^3.3.2",
@@ -52,8 +55,5 @@
     "./**/*.{js,ts,vue,tsx,jsx,css,less,json}": [
       "eslint --fix"
     ]
-  },
-  "pnpm": {
-    "version": "8.11.0" 
   }
 }
