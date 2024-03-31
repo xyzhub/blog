@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 import timeline from 'vitepress-markdown-timeline'
 
 // eslint-disable-next-line node/prefer-global/process
-const base = process.env.NODE_ENV === 'production' && !process.env.NODE_ENV_VERCEL ? '/nvcui/' : '/'
+const base = process.env.NODE_ENV === 'production' && !process.env.NODE_ENV_VERCEL ? '/blog/' : '/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
